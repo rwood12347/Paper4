@@ -34,7 +34,6 @@ times = [];
         disp('WARNING: Converted matrices are now symbolic')
     else
         Identity = speye(size(B));
-        Identity = gpuArray(Identity);
     end
     
 %     %-------------------------------------------------Exp----------------------------------------------------------
@@ -44,7 +43,7 @@ times = [];
 
     
     v = ones(size(W,2),1);
-    W = gather(W);
+  
     W = sparse(W);
     tic
     exp_edge = expmv(W,v,t);
