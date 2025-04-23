@@ -14,7 +14,7 @@ rng(seed)
 
 %Create batches of dense matrices
 
-M = zeros(number_of_nodes*number_of_timeframes,number_of_nodes*number_of_timeframes,"gpuArray");
+M = zeros(number_of_nodes*number_of_timeframes,number_of_nodes*number_of_timeframes);
         
         for timeframe = 1:number_of_timeframes
             
@@ -22,7 +22,7 @@ M = zeros(number_of_nodes*number_of_timeframes,number_of_nodes*number_of_timefra
            % fprintf("Nth timeframe: %i \n", timeframe)            
 
             % generate the initial random matrix
-            experiment_matrix = rand(number_of_nodes,number_of_nodes, "gpuArray");
+            experiment_matrix = rand(number_of_nodes,number_of_nodes);
 
             % generate a sparsity filter
             if ~isSparse
@@ -51,25 +51,5 @@ M = zeros(number_of_nodes*number_of_timeframes,number_of_nodes*number_of_timefra
 
         end
         
-        %save the M matrix]
-        % save_path = join([cd,sprintf("M matrices\\Nodes_%i\\",number_of_nodes) ], '\\');
-        % save_name = sprintf("Nodes_%i_Timeframes_%i_Experiment_%i", number_of_nodes,number_of_timeframes, experiment_no);
-    %     try
-    %        if ~isfolder(save_path)
-    %            mkdir(save_path);
-    %             fprintf('Folder created: %s\n', save_path);
-    %        end
-    %         % M = sym(gather(M));            %For symbolic matrices
-    %         save(save_path+save_name, 'M')
-    %         fprintf('Successfully saved M to %s', save_path+save_name)
-    %     catch
-    % 
-    %         fprintf('Failed to save M')
-    %     end
-    %     display('Clearing M...')    
-    %     clear M
-    % 
-    %     display('M cleared!')
-    % 
-    % end
+
 end

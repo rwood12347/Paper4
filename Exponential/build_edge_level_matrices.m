@@ -3,7 +3,7 @@ function [Ls,Ss,Bs,Ws,Rs] = build_edge_level_matrices(M, number_nodes,timeframes
 
 As = cell(1, timeframes);
 
-if number_nodes > 400
+if number_nodes > 1
     useGPU = false;
 else
     useGPU = false;

@@ -11,7 +11,6 @@ for i = 1:size(node_sizes,2)
 batch_times = [];
      for experiment = 1:experiments
          M = matrix_preparation(node_sizes(i), seed, isSparse, 0.3, time_frames);
-        % fprintf('Loading %s', to_load_exp)
         times = exp_timing_function(M, node_sizes(i), time_frames);
         batch_times = [batch_times; times]; %times = [node_time, edge_time, nodes, edges]
      end
