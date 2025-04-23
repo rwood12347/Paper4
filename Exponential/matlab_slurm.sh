@@ -11,5 +11,5 @@ time_frames=2
 seed=42
 isSparse=1
 echo "Experiments:$experiments"
-srun matlab -nojvm -nosplash -batch "experiment_loop($experiments, $min_nodes, $max_nodes, $node_skip, $time_frames, $s>
+srun matlab -nojvm -nosplash -batch "experiment_loop($experiments, $min_nodes, $max_nodes, $node_skip, $time_frames, $seed, $isSparse)"
 
