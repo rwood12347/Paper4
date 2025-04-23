@@ -1,7 +1,5 @@
-%Experiment loop
-
 function all_times =  experiment_loop(experiments, min_nodes, max_nodes,node_skip, time_frames, seed, isSparse) 
-save_name = join([cd, "results" ], '\\')
+
 
 
 all_times = [];
@@ -18,8 +16,8 @@ batch_times = [];
 
 end
 
-results = table(all_times(:,1), all_times(:,2), all_times(:,3), all_times(:,4), 'VariableNames', {'NodeTime', 'EdgeTime', 'No_nodes', 'No_edges'});
-save(save_name, "results")
+% results = table(all_times(:,1), all_times(:,2), all_times(:,3), all_times(:,4), 'VariableNames', {'NodeTime', 'EdgeTime', 'No_nodes', 'No_edges'});
+
 % bar(results.EdgeTime-results.NodeTime)
 
 end
