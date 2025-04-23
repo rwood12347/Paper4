@@ -32,14 +32,9 @@ M = zeros(number_of_nodes*number_of_timeframes,number_of_nodes*number_of_timefra
             end
             filter = experiment_matrix < density_constant_temp;
 
-            %apply the filter
+   
             experiment_matrix = experiment_matrix.*filter;
-            % experiment_matrix = round(gather(experiment_matrix),2);
-            
-            experiment_matrix = gpuArray(experiment_matrix);
 
-            % experiment_matrix = sprand(number_of_nodes, number_of_nodes, density_constant);
-            experiment_matrix = gpuArray(full(experiment_matrix));
             experiment_matrix = triu(experiment_matrix) + triu(experiment_matrix).';
             experiment_matrix = experiment_matrix - diag(diag(experiment_matrix));
             experiment_matrix = experiment_matrix ./ density_constant;
