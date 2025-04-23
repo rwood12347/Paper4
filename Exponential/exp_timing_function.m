@@ -1,8 +1,8 @@
 function [times] = exp_timing_function(M,node_number, timeframes)
 %returns a vector of times in order of the experiment no. of the size:
 %no_exp x 2 in the order [my expm, naive expm]
-addpath("NBTmethods_GPU\")
-addpath("NBTmethods\")
+addpath("NBTmethods_GPU")
+addpath("NBTmethods")
 %test: argument number
 % if nargin < 2
 %     error("ERROR: Insufficient inputs provided");
